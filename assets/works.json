@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "label": "Cool stuff",
+        "imageUrl": "images/space-wallpaper(1).jpg"
+    },
+    {
+        "id": 2,
+        "label": "Great stuff",
+        "imageUrl": "images/space-wallpaper(2).jpg"
+    },
+    {
+        "id": 3,
+        "label": "Infinite space",
+        "imageUrl": "images/space-wallpaper(3).jpg"
+    }
+]

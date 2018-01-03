@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "label": "Lovely teddy bear",
+        "imageUrl": "images/ted-working.jpg"
+    },
+    {
+        "id": 2,
+        "label": "Cool product",
+        "imageUrl": "images/ted-driving.jpg"
+    },
+    {
+        "id": 3,
+        "label": "Yet another cool product",
+        "imageUrl": "images/ted-wedding.jpg"
+    }
+]

@@ -1,0 +1,12 @@
+@font-face {
+  font-family: "OpenSans";
+  src: url("OpenSans-Light-webfont.ttf") format("truetype");
+}
+
+* {
+  font-family: "OpenSans", sans-serif;
+}
+
+#loading-animation {
+  margin: 10px;
+}
