@@ -9,8 +9,7 @@ const mapStateToProps = (state) => (
     { photosGallery: state.photos.get('photosGallery') }
 );
 
-@connect(mapStateToProps)
-export default class Home extends React.Component {
+class Home extends React.Component {
 
     componentDidMount() {
         this.props.dispatch(fetchPhotos());
@@ -47,3 +46,5 @@ export default class Home extends React.Component {
 
     }
 }
+
+export default connect(mapStateToProps)(Home);

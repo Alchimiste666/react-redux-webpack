@@ -5,6 +5,7 @@ import {
 } from '../actions/products.actions';
 
 const initialState = Immutable.fromJS({
+    loading: false,
     productsGallery: [],
     selectedProduct: {}
 });
@@ -26,7 +27,7 @@ const productReducer = (state = initialState, action) => {
         }
 
         case FETCH_PRODUCT: {
-            return state.set('loading', false);
+            return state.set('loading', true);
         }
 
         case FETCH_PRODUCT_FULFILLED: {

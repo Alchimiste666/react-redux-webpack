@@ -9,8 +9,7 @@ import loremIpsum from 'lorem-ipsum';
 
 const mapStateToProps = (state) => ({ worksGallery: state.works.get('worksGallery') });
 
-@connect(mapStateToProps)
-export default class Works extends React.Component {
+class Works extends React.Component {
 
     componentDidMount() {
         this.props.dispatch(fetchWorks());
@@ -45,3 +44,5 @@ export default class Works extends React.Component {
 
     }
 }
+
+export default connect(mapStateToProps)(Works);

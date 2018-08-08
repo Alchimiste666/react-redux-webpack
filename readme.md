@@ -5,8 +5,8 @@ Demo project for react / redux integration with different middlewares (logger / 
 The project is bundled with webpack 2.x and includes tree shaking feature in production build.
 
 Built with:
-    NPM version : v4.0.5
-    NodeJS version : v7.0.0
+    NPM version : v5.6.0
+    NodeJS version : v8.11.2
 
 To start / package the project :
 

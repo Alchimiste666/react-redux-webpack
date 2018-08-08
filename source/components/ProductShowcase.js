@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 
 import { connect } from 'react-redux';
 import { fetchProduct } from '../actions/products.actions';
@@ -9,16 +9,15 @@ import loremIpsum from 'lorem-ipsum';
 
 const mapStateToProps = (state) => ({ selectedProduct: state.products.get('selectedProduct') });
 
-@connect(mapStateToProps)
-export default class ProductShowcase extends React.Component {
+class ProductShowcase extends React.Component {
 
     componentDidMount() {
-        const { productId } = this.props.params;
+        const { productId } = this.props.match.params;
         this.props.dispatch(fetchProduct(productId));
     }
 
     render() {
-        const {label, imageUrl} = this.props.selectedProduct;
+        const { label, imageUrl } = this.props.selectedProduct;
         const randomText = loremIpsum({ count: 10 });
 
         return (
@@ -44,3 +43,5 @@ export default class ProductShowcase extends React.Component {
     }
 
 }
+
+export default connect(mapStateToProps)(ProductShowcase);
