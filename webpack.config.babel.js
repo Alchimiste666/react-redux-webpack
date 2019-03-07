@@ -7,6 +7,7 @@ import CopyWebpackPlugin from 'copy-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import BrowserSyncWebpackPlugin from 'browser-sync-webpack-plugin';
 import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
 import environment, { development, production, ci } from './environment.config.js';
 import babelConfig from './babel.config.json';
@@ -35,6 +36,9 @@ let webpackPlugins = [
             removeScriptTypeAttributes: true,
             removeStyleLinkTypeAttributes: true
         }
+    }),
+    new MiniCssExtractPlugin({
+        filename: "styles.bundle.css"
     })
 ];
 
@@ -79,7 +83,16 @@ const webpackConfig = {
         rules: [
             { test: /\.js$/, include: /source/, loader: 'eslint-loader', enforce: 'pre' },
             { test: /\.jsx?$/, include: /source/, loader: 'babel-loader', options: babelConfig },
-            { test: /\.css$/, loader: 'style-loader!css-loader' },
+            // { test: /\.css$/, loader: 'style-loader!css-loader' },
+            {
+                test: /\.css$/,
+                use: [
+                    {
+                        loader: MiniCssExtractPlugin.loader,
+                    },
+                    "css-loader"
+                ]
+            },
             { test: /\.(png|jpg|gif|ttf|eot|svg|woff(2)?)$/, loader: 'url-loader?limit=10240' }
         ]
     },
